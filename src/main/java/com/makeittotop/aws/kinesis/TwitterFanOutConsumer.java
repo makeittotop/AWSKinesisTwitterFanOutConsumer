@@ -38,6 +38,11 @@ public class TwitterFanOutConsumer {
             System.exit(-1);
         }
 
+        if(tcArgs.isHelp()) {
+            jc.usage();
+            System.exit(0);
+        }
+
         String shardId = tcArgs.getShardId();
         String consumerName = tcArgs.getConsumerName();
         String streamArn = tcArgs.getStreamArn();

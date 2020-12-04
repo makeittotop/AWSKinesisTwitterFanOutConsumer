@@ -50,4 +50,15 @@ public class TwitterFanOutConsumerArgs {
             required = true
     )
     private String streamArn;
+
+    public boolean isHelp() {
+        return help;
+    }
+
+    public void setHelp(boolean help) {
+        this.help = help;
+    }
+
+    @Parameter(names = "--help", help = true)
+    private boolean help;
 }
