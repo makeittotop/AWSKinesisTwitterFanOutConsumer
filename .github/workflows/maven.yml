@@ -22,3 +22,34 @@ jobs:
         java-version: 1.11
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+  upload:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/upload-artifact@v2
+        with:
+          name: TwitterFanOutConsumer-Jar
+          path: target/TwitterFanOutConsumer-makeittotop-0.1-jar-with-dependencies.jar
+          retention-days: 7
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+
+  download:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: TwitterFanOutConsumer-Jar
+          path: ~/Downloads
+
+      - name: Display structure of downloaded files
+        run: ls -lth
+        working-directory: ~/Downloads
+
+
+
