@@ -43,6 +43,9 @@ public class TwitterFanOutConsumer {
             System.exit(0);
         }
 
+        Integer foo = null;
+        Integer bar = 1 / foo;
+
         String shardId = tcArgs.getShardId();
         String consumerName = tcArgs.getConsumerName();
         String streamArn = tcArgs.getStreamArn();
