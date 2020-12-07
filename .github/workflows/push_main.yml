@@ -26,7 +26,3 @@ jobs:
         path: target/
         retention-days: 1
         if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
-
-on:
-  push:
-    branches: [ main ]
